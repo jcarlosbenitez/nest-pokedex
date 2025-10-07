@@ -9,7 +9,10 @@ async function bootstrap() {
     new ValidationPipe({
       whitelist: true, // quita propiedades que no están en el DTO
       forbidNonWhitelisted: true, // lanza error si pasan propiedades extras
-      //transform: true, // convierte los tipos automáticamente (ej: string → number)
+      transform: true, // convierte los tipos automáticamente (ej: string → number)
+      transformOptions:{
+        enableImplicitConversion: true
+      }
     }),
   );
 
